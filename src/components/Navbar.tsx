@@ -100,7 +100,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         <div className={styles.rightSection}>
           <Dropdown overlay={languageMenu}>
             <Button type="link" className={styles.language}>
-              <GlobalOutlined style={{ display: 'inline-flex' }} /> EN
+              <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <GlobalOutlined /> EN
+              </span>
             </Button>
           </Dropdown>
           <Link href="/login" legacyBehavior>
