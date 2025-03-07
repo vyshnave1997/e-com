@@ -1,4 +1,4 @@
-// components/Loader.tsx
+
 import { Spin } from 'antd';
 import styles from './Loader.module.scss';
 

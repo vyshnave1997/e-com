@@ -1,4 +1,4 @@
-// components/Reviews.tsx
+
 import React from 'react';
 import { List, Avatar, Rate } from 'antd';
 

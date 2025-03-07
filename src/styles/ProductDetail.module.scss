@@ -1,4 +1,5 @@
-@import './_variables.scss';
+@use './_variables.scss' as vars;
+@use 'sass:color';
 
 .header {
   padding: 10px 20px;
@@ -8,12 +9,12 @@
   background-color: transparent;
   border: none;
   font-size: 0.9rem;
-  color: $primary-color;
+  color: vars.$primary-color;
   cursor: pointer;
   padding: 5px 10px;
   transition: color 0.2s;
   &:hover {
-    color: darken($primary-color, 10%);
+    color: color.adjust(vars.$primary-color, $lightness: -10%);
   }
 }
 
@@ -37,7 +38,7 @@
   gap: 20px;
   background-color: #fff;
   padding: 20px;
-  border: 1px solid $border-color;
+  border: 1px solid vars.$border-color;
   border-radius: 8px;
 }
 
@@ -58,7 +59,7 @@
 .price {
   font-size: 2rem;
   font-weight: bold;
-  color: $primary-color;
+  color: vars.$primary-color;
 }
 
 .category {

@@ -1,8 +1,8 @@
-// components/ProductCard.module.scss
-@import '../styles/_variables.scss';
+
+@use '../styles/_variables.scss' as vars;
 
 .card {
-  border: 1px solid $border-color;
+  border: 1px solid vars.$border-color;
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
@@ -46,15 +46,15 @@
   font-size: 1rem;
   margin: 10px 0;
   font-weight: bold;
-  color: $text-gray;
+  color: vars.$text-gray;
 }
 
 .rating {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
-  flex-wrap: nowrap;    // Prevent wrapping
-  white-space: nowrap;  // Force one line
+  flex-wrap: nowrap;    
+  white-space: nowrap;  
 }
 
 .reviewCount {
@@ -66,7 +66,7 @@
 .price {
   font-size: 1.1rem;
   font-weight: bold;
-  color: $primary-color;
+  color: vars.$primary-color;
   margin-bottom: 5px;
 }
 

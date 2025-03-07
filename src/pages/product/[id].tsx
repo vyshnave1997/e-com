@@ -1,4 +1,4 @@
-// pages/product/[id].tsx
+
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +22,7 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
   const router = useRouter();
   const cartItem = useSelector((state: RootState) => state.cart.items[product.id]);
 
-  // State for Write Review modal
+
   const [isReviewModalVisible, setReviewModalVisible] = useState(false);
   const [reviewText, setReviewText] = useState('');
 
@@ -49,7 +49,7 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
   };
 
   const handleAddToWishlist = () => {
-    // Placeholder for wishlist functionality
+
     message.info('Product added to wishlist');
   };
 
@@ -58,7 +58,7 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
   };
 
   const handleReviewOk = () => {
-    // Placeholder: Save review (could dispatch an action or call an API)
+  
     message.success('Thank you for your review!');
     setReviewModalVisible(false);
     setReviewText('');
@@ -68,7 +68,7 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
     setReviewModalVisible(false);
   };
 
-  // Dummy reviews data; replace with real data if available
+
   const dummyReviews: Review[] = [
     { id: 1, reviewer: 'John Doe', rating: 4, comment: 'Great product, highly recommended!' },
     { id: 2, reviewer: 'Jane Smith', rating: 5, comment: 'Excellent quality and fast shipping.' },
@@ -97,7 +97,7 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
             <p className={styles.price}>${product.price}</p>
             <p>{product.description}</p>
             <p className={styles.category}>Category: {product.category}</p>
-            {/* Product Rating */}
+        
             {product.rating && (
               <div className={styles.rating}>
                 <Rate disabled defaultValue={Number(product.rating?.rate)} allowHalf />

@@ -1,4 +1,4 @@
-// pages/404.tsx
+
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { Button, Typography } from 'antd';
