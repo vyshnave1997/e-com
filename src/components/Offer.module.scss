@@ -1,9 +1,9 @@
-// components/Offer.module.scss
+
 @import '../styles/_variables.scss';
 
 .offerCard {
   border: 2px solid $primary-color;
-  background-color: #fffbe6; // Light yellowish background
+  background-color: #fffbe6; 
   text-align: center;
   padding: 10px;
   transition: transform 0.3s ease;
@@ -15,7 +15,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  padding-bottom: 75%; // Maintain aspect ratio
+  padding-bottom: 75%; 
 }
 
 .image {

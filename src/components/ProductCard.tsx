@@ -1,4 +1,4 @@
-// components/ProductCard.tsx
+
 import Link from 'next/link';
 import { useState } from 'react';
 import { Card, Tag, Button, Rate, message } from 'antd';

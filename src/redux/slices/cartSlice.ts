@@ -1,7 +1,7 @@
-// redux/slices/cartSlice.ts
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// Define a Product interface to type the product data
+
 export interface Product {
   id: number;
   title: string;
@@ -15,7 +15,6 @@ export interface Product {
   };
 }
 
-// Extend Product to include quantity for cart items
 export interface CartItem extends Product {
   quantity: number;
 }

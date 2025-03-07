@@ -1,4 +1,4 @@
-// pages/_app.tsx
+
 import '../styles/globals.scss';
 import 'antd/dist/reset.css';
 import { ToastContainer } from 'react-toastify';

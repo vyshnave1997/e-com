@@ -1,5 +1,5 @@
-// components/Navbar.module.scss
-@import '../styles/_variables.scss';
+
+@use '../styles/_variables.scss' as vars;
 
 .header {
   display: flex;
@@ -9,7 +9,7 @@
   padding: 0 20px;
 }
 
-/* Left Section */
+
 .leftSection {
   display: flex;
   align-items: center;
@@ -21,13 +21,12 @@
   justify-content: center;
 }
 .logo {
-  color: $text-gray;
+  color: vars.$text-gray;
   font-size: 1.8rem;
   font-weight: bold;
   margin-right: 20px;
 }
 
-/* Center Section (Desktop only) */
 .centerSection {
   flex: 1;
   @media (max-width: 768px) {
@@ -35,7 +34,6 @@
   }
 }
 
-/* Style the horizontal menu */
 .menu {
   background: transparent;
   border-bottom: none;
@@ -102,12 +100,12 @@
 .login,
 .orders,
 .cart {
-  color: $primary-color;
+  color: vars.$primary-color;
   font-size: 1rem;
 }
 
 .logo {
-  color: $primary-color;
+  color: vars.$primary-color;
   font-size: 1.8rem;
   font-weight: bold;
   margin-right: 20px;

@@ -1,12 +1,12 @@
-// styles/Cart.module.scss
-@import './_variables.scss';
+
+@use './_variables.scss' as vars;
 
 .container {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
   background: #fff;
-  border: 1px solid $border-color;
+  border: 1px solid vars.$border-color;
   border-radius: 8px;
 }
 
@@ -23,9 +23,9 @@
 @media (max-width: 768px) {
   .container {
     padding: 15px;
-  }
-  
-  :global(.ant-list-item) {
-    padding: 15px !important;
+
+    :global(.ant-list-item) {
+      padding: 15px !important;
+    }
   }
 }

@@ -1,4 +1,4 @@
-// components/Navbar.tsx
+
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Layout, Menu, Badge, Dropdown, Button, Input, Drawer } from 'antd';
@@ -23,11 +23,11 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
-  // Get total cart items from Redux store
+
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const totalItems = Object.values(cartItems).reduce((acc, item) => acc + item.quantity, 0);
 
-  // Fetch categories from the API
+
   const [categories, setCategories] = useState<string[]>([]);
   useEffect(() => {
     async function fetchCategories() {
@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
     fetchCategories();
   }, []);
 
-  // Language dropdown menu
+
   const languageMenu = (
     <Menu>
       <Menu.Item key="en">English</Menu.Item>
@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
     </Menu>
   );
 
-  // State for mobile drawer visibility
+
   const [mobileVisible, setMobileVisible] = useState(false);
   const openDrawer = () => setMobileVisible(true);
   const closeDrawer = () => setMobileVisible(false);
@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   return (
     <>
       <Header className={styles.header}>
-        {/* Left section: Logo only */}
+     
         <div className={styles.leftSection}>
           <div className={styles.logo}>
             <Link href="/" legacyBehavior>
@@ -64,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           </div>
         </div>
 
-        {/* Center section: Horizontal Menu including Search (hidden on mobile) */}
+    
         <div className={styles.centerSection}>
           <Menu mode="horizontal" theme="dark" className={styles.menu}>
             <Menu.Item key="search" className={styles.searchItem}>
@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           </Menu>
         </div>
 
-        {/* Right section: Language, Login, Orders, Cart, and Hamburger */}
+        
         <div className={styles.rightSection}>
           <Dropdown overlay={languageMenu}>
             <Button type="link" icon={<GlobalOutlined />} className={styles.language}>
@@ -120,7 +120,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               </Badge>
             </a>
           </Link>
-          {/* Hamburger icon for mobile */}
+      
           <Button
             type="link"
             icon={<MenuOutlined style={{ fontSize: '24px', color: '#fff' }} />}
@@ -130,7 +130,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         </div>
       </Header>
 
-      {/* Mobile Navigation Drawer */}
+
       <Drawer
         title="Menu"
         placement="right"
@@ -168,7 +168,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               <a onClick={closeDrawer}>Customer Service</a>
             </Link>
           </Menu.Item>
-          {/* For mobile, we now show Sign In and Cart */}
+ 
           <Menu.Item key="login-mobile">
             <Link href="/login" legacyBehavior>
               <a onClick={closeDrawer}>

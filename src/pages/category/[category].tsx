@@ -1,4 +1,4 @@
-// pages/category/[category].tsx
+
 import { GetServerSideProps, NextPage } from 'next';
 import ProductCard from '../../components/ProductCard';
 import styles from '../../styles/Home.module.scss';

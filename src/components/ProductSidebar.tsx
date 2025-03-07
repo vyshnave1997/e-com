@@ -1,4 +1,4 @@
-// components/ProductSidebar.tsx
+
 import React, { useEffect, useState } from 'react';
 import { Card, List, Button, Spin } from 'antd';
 
@@ -24,7 +24,7 @@ const ProductSidebar: React.FC<ProductSidebarProps> = ({ category, currentProduc
       try {
         const res = await fetch(`https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`);
         const data: RelatedProduct[] = await res.json();
-        // Filter out the current product from the related products
+
         const filtered = data.filter((p) => p.id !== currentProductId);
         setRelatedProducts(filtered);
       } catch (error) {

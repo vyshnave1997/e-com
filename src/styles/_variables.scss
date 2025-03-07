@@ -1,4 +1,6 @@
-$primary-color: #737678; // Change this to your desired color
+@forward 'sass:color';
+
+$primary-color: #737678; 
 $secondary-color: #ffffff;
 $text-color: #333;
 $border-color: #ddd;

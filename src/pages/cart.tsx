@@ -1,4 +1,4 @@
-// pages/cart.tsx
+
 import { NextPage } from 'next';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/store';
