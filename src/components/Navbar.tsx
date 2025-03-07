@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Layout, Menu, Badge, Dropdown, Button, Input, Drawer } from 'antd';
 import {
   ShoppingCartOutlined,
-  GlobalOutlined,
+  TranslationOutlined,
   UserOutlined,
   UnorderedListOutlined,
   MenuOutlined,
@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           <Dropdown overlay={languageMenu}>
             <Button type="link" className={styles.language}>
               <span style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <GlobalOutlined /> EN
+                <TranslationOutlined /> EN
               </span>
             </Button>
           </Dropdown>
