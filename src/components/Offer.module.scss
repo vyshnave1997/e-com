@@ -1,0 +1,32 @@
+// components/Offer.module.scss
+@import '../styles/_variables.scss';
+
+.offerCard {
+  border: 2px solid $primary-color;
+  background-color: #fffbe6; // Light yellowish background
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; // Maintain aspect ratio
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.offerText {
+  margin-top: 10px;
+}

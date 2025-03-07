@@ -1,0 +1,11 @@
+@import './_variables.scss';
+/* styles/globals.scss */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Nunito", sans-serif;
+}

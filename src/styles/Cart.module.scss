@@ -1,0 +1,31 @@
+// styles/Cart.module.scss
+@import './_variables.scss';
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+}
+
+.total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.checkoutButton {
+  margin-top: 20px;
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  :global(.ant-list-item) {
+    padding: 15px !important;
+  }
+}

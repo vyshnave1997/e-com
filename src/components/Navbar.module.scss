@@ -1,0 +1,114 @@
+// components/Navbar.module.scss
+@import '../styles/_variables.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #131921;
+  padding: 0 20px;
+}
+
+/* Left Section */
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+.searchItem {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  color: $text-gray;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+/* Center Section (Desktop only) */
+.centerSection {
+  flex: 1;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+/* Style the horizontal menu */
+.menu {
+  background: transparent;
+  border-bottom: none;
+  margin-left: 20px;
+
+  :global(.ant-menu-submenu) {
+   margin-left: 100px !important; 
+  }
+}
+
+.searchItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+
+  
+  :global(.ant-input-search) {
+    width: 400px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 18px ;
+    margin-right: 20px;
+  }
+}
+/* Right Section */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  
+}
+
+/* For mobile, hide language and orders, but keep login and cart */
+@media (max-width: 768px) {
+  .language,
+  .orders {
+    display: none;
+  }
+  /* Ensure login and cart remain visible */
+  .login,
+  .cart,
+  .hamburger {
+    display: inline-block;
+  }
+}
+
+/* Hamburger icon visible on mobile */
+.hamburger {
+  display: none;
+  @media (max-width: 768px) {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .cart{
+    margin-top: 10px !important;
+  }
+}
+
+.language,
+.login,
+.orders,
+.cart {
+  color: $primary-color;
+  font-size: 1rem;
+}
+
+.logo {
+  color: $primary-color;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
