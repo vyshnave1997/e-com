@@ -99,8 +99,8 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         
         <div className={styles.rightSection}>
           <Dropdown overlay={languageMenu}>
-            <Button type="link" icon={<GlobalOutlined />} className={styles.language}>
-              EN
+            <Button type="link" className={styles.language}>
+              <GlobalOutlined /> EN
             </Button>
           </Dropdown>
           <Link href="/login" legacyBehavior>
