@@ -20,7 +20,6 @@ A modern e-commerce platform built with Next.js and TypeScript, featuring a resp
 - Wishlist feature
 - Product search
 - Product reviews and ratings
-- Dark mode support
 - Loading states and animations
 
 ## Getting Started
