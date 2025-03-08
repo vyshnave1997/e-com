@@ -210,37 +210,26 @@ const Home: NextPage<HomeProps> = ({ products, categories }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
-    if (!res.ok) {
-      throw new Error(`API responded with status: ${res.status}`);
-    }
-    const products: Product[] = await res.json();
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
+  const products: Product[] = await res.json();
 
-    const availableColors = ["Red", "Blue", "Green", "Black", "White", "Yellow"];
 
-    const productsWithColor = products.map((product) => ({
-      ...product,
-      color: availableColors[Math.floor(Math.random() * availableColors.length)],
-    }));
+  const availableColors = ["Red", "Blue", "Green", "Black", "White", "Yellow"];
 
-    const categories = [...new Set(products.map((product) => product.category))];
 
-    return {
-      props: {
-        products: productsWithColor,
-        categories,
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching products:', error);
-    return {
-      props: {
-        products: [],
-        categories: [],
-      },
-    };
-  }
+  const productsWithColor = products.map((product) => ({
+    ...product,
+    color: availableColors[Math.floor(Math.random() * availableColors.length)],
+  }));
+
+  const categories = [...new Set(products.map((product) => product.category))];
+
+  return {
+    props: {
+      products: productsWithColor,
+      categories,
+    },
+  };
 };
 
 export default Home;
