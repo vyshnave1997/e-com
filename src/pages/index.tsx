@@ -210,7 +210,7 @@ const Home: NextPage<HomeProps> = ({ products, categories }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch('https://fakestoreapi.com/products');
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
   const products: Product[] = await res.json();
 
 

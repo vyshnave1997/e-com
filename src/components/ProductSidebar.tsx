@@ -22,7 +22,7 @@ const ProductSidebar: React.FC<ProductSidebarProps> = ({ category, currentProduc
     async function fetchRelatedProducts() {
       setLoading(true);
       try {
-        const res = await fetch(`https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/category/${encodeURIComponent(category)}`);
         const data: RelatedProduct[] = await res.json();
 
         const filtered = data.filter((p) => p.id !== currentProductId);
