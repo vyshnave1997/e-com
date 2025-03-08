@@ -4,6 +4,7 @@
   position: relative; 
   min-height: 100vh;
   padding: 20px;
+  
 }
 
 
@@ -14,9 +15,12 @@
 }
 
 .sider {
-  background: #fff;
+  background: #ffffff !important;
   padding: 20px;
+  margin-top: 20px;
   border-right: 1px solid vars.$border-color;
+  border-radius: 8px;
+  color: #fff;
 }
 
 .sidebarContent {
