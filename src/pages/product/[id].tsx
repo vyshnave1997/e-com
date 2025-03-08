@@ -161,7 +161,7 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const id = params?.id;
-  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`);
   const product: Product = await res.json();
 
   return {
