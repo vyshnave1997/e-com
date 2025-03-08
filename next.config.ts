@@ -1,18 +1,20 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from 'next';
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: ['rc-util', '@ant-design/icons-svg', 'antd', 'rc-picker', 'rc-input'],
   webpack: (config) => {
     config.resolve.extensionAlias = {
       '.js': ['.js', '.ts', '.tsx'],
     };
+
+    // Update alias to point to the correct file path.
     config.resolve.alias = {
       ...config.resolve.alias,
-      'rc-picker/es/locale/common': require.resolve('rc-picker/lib/locale/common')
+      'rc-picker/es/locale/common': require.resolve('rc-picker/es/locale/common.js'),
     };
     return config;
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

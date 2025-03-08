@@ -1,10 +1,10 @@
-
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetServerSideProps, NextPage } from 'next';
 import { Button, Rate, Modal, Input, message, Tag } from 'antd';
-import { FacebookFilled, TwitterSquareFilled, LinkedinFilled, HeartOutlined } from '@ant-design/icons';
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { AiOutlineHeart } from 'react-icons/ai';
 import { addToCart, increment, decrement, Product } from '../../redux/slices/cartSlice';
 import { RootState } from '../../redux/store';
 import ProductSidebar from '../../components/ProductSidebar';
@@ -21,7 +21,6 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const cartItem = useSelector((state: RootState) => state.cart.items[product.id]);
-
 
   const [isReviewModalVisible, setReviewModalVisible] = useState(false);
   const [reviewText, setReviewText] = useState('');
@@ -49,7 +48,6 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
   };
 
   const handleAddToWishlist = () => {
-
     message.info('Product added to wishlist');
   };
 
@@ -58,7 +56,6 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
   };
 
   const handleReviewOk = () => {
-  
     message.success('Thank you for your review!');
     setReviewModalVisible(false);
     setReviewText('');
@@ -67,7 +64,6 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
   const handleReviewCancel = () => {
     setReviewModalVisible(false);
   };
-
 
   const dummyReviews: Review[] = [
     { id: 1, reviewer: 'John Doe', rating: 4, comment: 'Great product, highly recommended!' },
@@ -97,33 +93,45 @@ const ProductDetail: NextPage<ProductDetailProps> = ({ product }) => {
             <p className={styles.price}>${product.price}</p>
             <p>{product.description}</p>
             <p className={styles.category}>Category: {product.category}</p>
-        
+
             {product.rating && (
               <div className={styles.rating}>
                 <Rate disabled defaultValue={Number(product.rating?.rate)} allowHalf />
-                <span className={styles.reviewCount}>({product.rating?.count || 0} reviews)</span>
+                <span className={styles.reviewCount}>
+                  ({product.rating?.count || 0} reviews)
+                </span>
               </div>
             )}
             <div className={styles.actionButtons}>
               {cartItem ? (
                 <div className={styles.cartControls}>
-                  <Button size="large" onClick={handleDecrement}>-</Button>
+                  <Button size="large" onClick={handleDecrement}>
+                    -
+                  </Button>
                   <span>{cartItem.quantity}</span>
-                  <Button size="large" onClick={handleIncrement}>+</Button>
+                  <Button size="large" onClick={handleIncrement}>
+                    +
+                  </Button>
                 </div>
               ) : (
-                <Button size="large" onClick={handleAddToCart}>Add to Cart</Button>
+                <Button size="large" onClick={handleAddToCart}>
+                  Add to Cart
+                </Button>
               )}
               <Button size="large" type="primary" onClick={handleBuyNow}>
                 Buy Now
               </Button>
-              <Button size="large" onClick={handleAddToWishlist} icon={<HeartOutlined />} />
+              <Button
+                size="large"
+                onClick={handleAddToWishlist}
+                icon={<AiOutlineHeart style={{ fontSize: '1.2rem', color: '#1677ff' }} />}
+              />
             </div>
             <div className={styles.socialShare}>
               <span>Share:</span>
-              <Button type="link" icon={<FacebookFilled />} />
-              <Button type="link" icon={<TwitterSquareFilled />} />
-              <Button type="link" icon={<LinkedinFilled />} />
+              <Button type="link" icon={<FaFacebookF />} />
+              <Button type="link" icon={<FaTwitter />} />
+              <Button type="link" icon={<FaLinkedinIn />} />
             </div>
             <div className={styles.reviewSection}>
               <Button onClick={handleWriteReview}>Write a Review</Button>

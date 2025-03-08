@@ -1,8 +1,7 @@
-
 import Link from 'next/link';
 import { useState } from 'react';
 import { Card, Tag, Button, Rate, message } from 'antd';
-import { HeartOutlined, HeartFilled } from '@ant-design/icons';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { toast } from 'react-toastify';
 import { Product } from '../redux/slices/cartSlice';
 import styles from '../styles/ProductCard.module.scss';
@@ -47,9 +46,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               onClick={handleWishlistClick}
               icon={
                 isWishlisted ? (
-                  <HeartFilled style={{ color: '#1677ff', fontSize: '1.2rem' }} />
+                  <AiFillHeart style={{ color: '#1677ff', fontSize: '1.2rem' }} />
                 ) : (
-                  <HeartOutlined style={{ color: '#1677ff', fontSize: '1.2rem' }} />
+                  <AiOutlineHeart style={{ color: '#1677ff', fontSize: '1.2rem' }} />
                 )
               }
             />
