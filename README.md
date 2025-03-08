@@ -26,7 +26,7 @@ A modern e-commerce platform built with Next.js and TypeScript, featuring a resp
 
 1. Clone the repository
 ```bash
-git clone [https://github.com/vyshnave1997/e-com.git]
+git clone https://github.com/vyshnave1997/e-com.git
 ```
 
 2. Install dependencies
