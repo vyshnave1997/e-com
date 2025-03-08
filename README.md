@@ -34,13 +34,17 @@ git clone <repository-url>
 ```bash
 npm install
 ```
+3. change .env.example to .env, or add this to your .env
+```bash
+NEXT_PUBLIC_API_URL=https://fakestoreapi.com
+```
 
-3. Run the development server
+4. Run the development server
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## API Integration
 - Uses FakeStore API for product data
